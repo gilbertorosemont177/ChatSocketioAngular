@@ -23,9 +23,9 @@ io.on("connection",(socket)=>{
             listemessage.push(msgsend)
             
             if(msgsend.connect ){
-            socket.emit("listemessages",msgsend)
+            socket.emit("listemessages",listemessage)
             }
-            socket.broadcast.emit("listemessages",msgsend)
+            socket.broadcast.emit("listemessages",listemessage)
 
 
            
