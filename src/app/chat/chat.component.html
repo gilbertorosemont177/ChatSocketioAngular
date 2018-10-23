@@ -1,0 +1,90 @@
+<div class="col-md-12 text-right" *ngIf="personneconnect">
+    <button type="button" class="btn btn-outline-danger"
+            (click)="deconnexion()">
+      Salir
+    </button>
+
+  </div>
+  <div  class="row">
+
+    <div class="col-sm-9 p-3 border ">
+
+        <div class="chat-window" *ngIf="personneconnect">
+            <h1>{{personneconnect}}</h1>
+
+            <hr>
+         <div   #scrollChat style="overflow-y: scroll; height: 450px; "> 
+                
+              <div  *ngIf="listitems" class=" mb-3 mt-3 p-3 "  >
+                
+                <div  *ngFor="let item of listitems">
+                    <div [ngClass]="{ 'text-right ': personneconnect != item.user }"> 
+                      <ng-container *ngIf="item.connect; else userdeconnect">
+                            <div>
+                                    <span class="badge" [ngClass]="{ ' badge-warning': personneconnect != item.user,
+                                                  'mt-4 mb-4 badge-success': personneconnect == item.user }">
+                                    {{ item.user}}</span>
+                                   
+                                </div>
+                        <div>        
+                              <span [ngClass]="{ '  message other-message': personneconnect != item.user,
+                              '    message-2 other-message-2': personneconnect == item.user }" >{{item.message}}</span>
+                          </div>
+                         
+      
+                      </ng-container>
+                      <ng-template #userdeconnect>
+                       
+                        <ng-container *ngIf="item.justconnect ; else cnxdnx">
+                            <div class="cnx mt-3 mb-3">{{item.message}}</div>
+                        </ng-container>
+                        <ng-template #cnxdnx>
+                            <div class="dcnx mt-3 mb-3">{{item.message}}</div>
+                        </ng-template>
+     
+                      </ng-template>
+              
+                    </div>
+                </div>
+        
+            </div>
+            
+           
+       </div> 
+      
+            <div class="row ">
+              <div class="col-sm-10">
+                      <div class="form-group">
+                              <input type="text" [(ngModel)]="msg"  (keypress)="UserTyping($event)" class="form-control" id="formGroupExampleInput" placeholder="">
+                            </div>
+              </div>
+              <div class="col">
+                      <div id="" class="form-group ">
+                      <button class="btn btn-info text-right"(click)="sendMessage()">envoyer</button>
+                  </div>
+              </div>
+                  
+      
+            </div>
+            
+      
+      
+      
+      
+      
+        </div>
+    </div>
+
+    <div class="col-sm-2 border">
+
+      <div *ngFor="let user of listeUsers">
+       
+            
+    <div style="margin-top: 8px" > <span class="data-letters">{{user.username | slice:0:1}}</span>  {{user.username | slice:1}}  <i class="fa fa-circle online"></i> </div>  
+
+      </div>
+
+      </div>
+
+  </div>
+ 

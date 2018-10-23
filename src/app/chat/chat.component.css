@@ -1,0 +1,145 @@
+#wrapper {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+}
+ .app-messages{
+  overflow:scroll;
+  height:270px;
+  /*background:gray;*/
+ 
+ }
+ 
+  .span {
+   
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+
+    -moz-border-radius: 30px; 
+    border-radius: 30px; 
+
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.data-letters {
+  content: attr(data-letters);
+  display: inline-block;
+  font-size: 1em;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background: blueviolet;
+  vertical-align: middle;
+  /* margin-right: 1em; */
+  color: white;
+  
+  }
+ 
+  .cnx{
+    color: darkblue
+  }
+  .dcnx{
+    color:red
+  }
+    
+
+
+  
+
+  /* lef */
+  .message {      
+    color: white;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    width: 90%;
+    position: relative;
+  
+    
+   
+  }
+  .other-message {
+    background:blueviolet;
+    
+    
+  }
+  .message:after {
+    bottom: 100%;
+    left: 69%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: blueviolet;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+/* :right */
+.message-2 {      
+  color: white;
+  padding: 18px 20px;
+  line-height: 26px;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-bottom: 30px;
+  width: 90%;
+  position: relative;
+  margin-top:20px;
+  margin-bottom:20px
+  
+ 
+}
+.other-message-2 {
+  background:green;
+  
+  
+}
+.online, .offline, .me {
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.online {
+color: green;
+}
+.badge {
+  display: inline-block !important;
+  padding: .25em .4em !important;;
+  font-size: 145% !important;;
+  font-weight: 700 !important;;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: baseline !important;;
+  border-radius: .25rem !important;
+  margin-bottom: 30px !important;
+  margin-top:30px !important;
+}
+.message-2:after {
+  bottom: 100%;
+  left: 42%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color:green;
+  border-width: 10px;
+  margin-left: -10px;
+}
