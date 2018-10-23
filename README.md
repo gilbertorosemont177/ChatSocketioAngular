@@ -1,4 +1,7 @@
-# Chatdeux
+# Chatsocket io 
+
+THIS CHAT HAS BEEN CREATED WITH ANGULAR, SOCKET IO AND JSEXPRESS, THE FILE SERVER YOU CAN FIND INTO THE SERVER FOLDER
+***. THE CHAT IS IN DEVELOPMENT ***
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
